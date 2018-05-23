@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>cx-coin</title>
+    <% if (htmlWebpackPlugin.options.nodeModules) { %>
+        <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+        <script>
+            require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
+        </script>
+        <% } %>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <style>
+        html,
+        body {
+            height: <%= 13*37+10 %>px;
+            margin: 0px;
+            padding: 5px;
+            overflow: hidden;
+        }
+
+        #markets_container {
+            height: <%= 13*37+10 %>px;
+        }
+    </style>
+
+    <script>
+        // window.onload=function(){
+        //     if(!(window.location.href.indexOf('from=show')>=0)){
+        //         window.location.href="show.html"
+        //     }
+        // }
+    </script>
+
+</body>
+
+</html>
